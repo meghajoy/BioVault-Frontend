@@ -14,7 +14,9 @@ import styles from "./login.module.css";
 //   } from "antd";
 // import { useForm} from "react-hook-form"
 import { useState } from "react";
-
+const login =()=>{
+    console.log("hello world");
+}
 export default function Login() {
     const  [name, setName] = useState('');
   return (
