@@ -1,10 +1,27 @@
 "use client";
 import Image from "next/image";
-import styles from "./login.module.css";
+import styles from "./logincopy.module.css";
 import { useState } from "react";
 
 export default function Login() {
-    const  [name, setName] = useState('');
+    const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Add your logic for handling form submission, e.g., send data to server
+    console.log('Name:', name);
+    console.log('Email:', email);
+    // Add your logic to send data to the server
+  };
   return (
     <main>
         <Image className={styles.cufinger} src='/CuntPrint.png' width={35} height={54} alt="Fingerprint"/>
@@ -22,14 +39,27 @@ export default function Login() {
         <Image className={styles.upload}src="/upload.png"width={90} height={90} alt="Fingerprint" />
         <div className={styles.boxcontainer}>
             <div className={styles.box}>
-                <input type="text" placeholder="name"></input>
-                <p>{name}</p>
             </div>
             <div className={styles.box}></div>
         <div className={styles.enter}>
-            <span className={styles.entering}>Name</span>
+            {/* <span className={styles.entering}>Name</span>
             <span className={styles.entering}>Email</span>
-            <span className={styles.entering}>Upload your fingerprint</span>
+            <span className={styles.entering}>Upload your fingerprint</span> */}
+                <form className={styles.form} onSubmit={handleSubmit}>
+      <div className={styles.formGroup}>
+        <label htmlFor="name">Name:</label>
+        <input type="text" id="name" name="name" value={name} onChange={handleNameChange}  className={styles.box}/>
+      </div>
+
+      <div className={styles.formGroup}>
+        <label htmlFor="email">Email:</label>
+        <input type="email" id="email" name="email" value={email} onChange={handleEmailChange} />
+      </div>
+
+      <button type="submit" className={styles.submitButton}>
+        Submit
+      </button>
+    </form>
         </div>
         <div className={styles.submit}>Submit
         <Image className={styles.plus}src="/submit.png"width={85} height={30} alt="Fingerprint" />

@@ -1,0 +1,46 @@
+/* styles/MyForm.module.css */
+
+.form {
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .formGroup {
+    margin-bottom: 20px;
+  }
+  
+  .label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .box{
+    padding: 20px;
+    height: 0px;
+    width: 250px;
+    border: 1px solid;
+    border-radius: 14px;
+    border-color: #2B21A1;
+    margin-bottom: 37px;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .submitButton {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submitButton:hover {
+    background-color: #45a049;
+  }
+  
