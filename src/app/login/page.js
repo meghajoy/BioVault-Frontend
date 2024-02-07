@@ -2,7 +2,9 @@
 import Image from "next/image";
 import styles from "./login.module.css";
 import { useState } from "react";
-
+const login =()=>{
+    console.log("hello world");
+}
 export default function Login() {
     const  [name, setName] = useState('');
   return (
