@@ -2,6 +2,7 @@
 import Image from "next/image";
 import styles from "./logincopy.module.css";
 import { useState } from "react";
+import api from "../../../api";
 
 export default function Login() {
     const [name, setName] = useState('');
@@ -21,10 +22,9 @@ export default function Login() {
     console.log('Name:', name);
     console.log('Email:', email);
     try {
-      const response = await fetch("/api/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email }), // Send form data as JSON
+      const response = await api.post("/api/register", {
+        name,
+        email,
       });
 
       if (!response.ok) {
@@ -34,7 +34,10 @@ export default function Login() {
       const data = await response.json();
       console.log("Registration successful:", data);
     } catch (error) {
-      
+      console.error("Error registering:", error);
+      // Handle registration errors (e.g., display error message)
+      // Replace with your desired error handling logic
+      alert("Registration failed. Please try again.");
     }
     // Add your logic to send data to the server
   };
