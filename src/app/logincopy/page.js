@@ -5,6 +5,7 @@ import { useState } from "react";
 import api from "../../../api";
 
 export default function Login() {
+
     const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
@@ -26,8 +27,8 @@ export default function Login() {
         name,
         email,
       });
-
-      if (!response.ok) {
+       console.log(response.data)
+      if (!response.ok|| response.data.message !== "success") {
         throw new Error(`API error: ${response.statusText}`);
       }
 
