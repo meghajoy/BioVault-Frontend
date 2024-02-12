@@ -15,11 +15,27 @@ export default function Login() {
     setEmail(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const   handleSubmit = async (e) => {
     e.preventDefault();
     // Add your logic for handling form submission, e.g., send data to server
     console.log('Name:', name);
     console.log('Email:', email);
+    try {
+      const response = await fetch("/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email }), // Send form data as JSON
+      });
+
+      if (!response.ok) {
+        throw new Error(`API error: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      console.log("Registration successful:", data);
+    } catch (error) {
+      
+    }
     // Add your logic to send data to the server
   };
   return (
@@ -46,6 +62,7 @@ export default function Login() {
             <span className={styles.entering}>Email</span>
             <span className={styles.entering}>Upload your fingerprint</span> */}
                 <form className={styles.form} onSubmit={handleSubmit}>
+                
       <div className={styles.formGroup}>
         <label htmlFor="name">Name:</label>
         <input type="text" id="name" name="name" value={name} onChange={handleNameChange}  className={styles.box}/>

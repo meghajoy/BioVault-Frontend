@@ -1,6 +1,8 @@
 import Image from "next/image";
 import styles from "./register.module.css";
+import api from "@/api";
 
+import { Form, Input, message } from "antd";
 export default function Register() {
   return (
     <main>
