@@ -2,12 +2,13 @@
 import Image from "next/image";
 import styles from "./logincopy.module.css";
 import { useState } from "react";
+import api from "../../../api";
 import Link from "next/link";
 
 export default function Login() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [selectedFile, setSelectedFile] = useState("");
+
+    const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -21,10 +22,28 @@ export default function Login() {
     setSelectedFile(file);
   };
 
-  const handleSubmit = (e) => {
+  const   handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Name", name);
     console.log("Email", email);
+    try {
+      const response = await api.post("/api/register", {
+        name,
+        email,
+      });
+       console.log(response.data)
+      if (!response.ok|| response.data.message !== "success") {
+        throw new Error(`API error: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      console.log("Registration successful:", data);
+    } catch (error) {
+      console.error("Error registering:", error);
+      // Handle registration errors (e.g., display error message)
+      // Replace with your desired error handling logic
+      alert("Registration failed. Please try again.");
+    }
   };
   return (
     <main>
@@ -70,6 +89,19 @@ export default function Login() {
         </div>
 
         <div className={styles.boxcontainer}>
+            <div className={styles.box}>
+            </div>
+            <div className={styles.box}></div>
+        <div className={styles.enter}>
+            {/* <span className={styles.entering}>Name</span>
+            <span className={styles.entering}>Email</span>
+            <span className={styles.entering}>Upload your fingerprint</span> */}
+                <form className={styles.form} onSubmit={handleSubmit}>
+                
+      <div className={styles.formGroup}>
+        <label htmlFor="name">Name:</label>
+        <input type="text" id="name" name="name" value={name} onChange={handleNameChange}  className={styles.box}/>
+      </div>
           <div className={styles.enter}>
             <form className={styles.form} onSubmit={handleSubmit}>
               <div className={styles.formGroup}>
