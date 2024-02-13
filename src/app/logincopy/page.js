@@ -17,7 +17,7 @@ export default function Login() {
     setEmail(e.target.value);
   };
 
-  const   handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Add your logic for handling form submission, e.g., send data to server
     console.log('Name:', name);
@@ -27,13 +27,12 @@ export default function Login() {
         name,
         email,
       });
-       console.log(response.data)
-      if (!response.ok|| response.data.message !== "success") {
+      console.log(response)
+      if (!response.data.success) {
         throw new Error(`API error: ${response.statusText}`);
       }
-
-      const data = await response.json();
-      console.log("Registration successful:", data);
+      // const data = await response.json();
+      console.log("Registration successful:", response.data);
     } catch (error) {
       console.error("Error registering:", error);
       // Handle registration errors (e.g., display error message)
