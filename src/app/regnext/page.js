@@ -83,8 +83,32 @@ export default function RegNext() {
           />
         </div>
 
+        <div className={styles.formGroup}>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            onChange={handleEmailChange}
+            className={styles}
+          />
+        </div>
+
+        <div className={styles.formGroup}>
+          <label htmlFor="phoneNumber">Phone No.</label>
+          <input
+            type="tel"
+            id="phoneNumber"
+            name="phoneNumber"
+            value={phoneNumber}
+            onChange={handlePhoneNumberChange}
+            className={styles}
+          />
+        </div>
+
         <div className={styles.line}></div>
-        <div className={styles.line}></div>
+        <div className={styles.line}> </div>
         <div className={styles.line}></div>
         <div className={styles.enter}>
           <span className={styles.entering}>Name</span>

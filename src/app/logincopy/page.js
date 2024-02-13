@@ -6,9 +6,9 @@ import api from "../../../api";
 import Link from "next/link";
 
 export default function Login() {
-
-    const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [selectedFile, setSelectedFile] = useState("");
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -22,7 +22,7 @@ export default function Login() {
     setSelectedFile(file);
   };
 
-  const   handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Name", name);
     console.log("Email", email);
@@ -31,8 +31,8 @@ export default function Login() {
         name,
         email,
       });
-       console.log(response.data)
-      if (!response.ok|| response.data.message !== "success") {
+      console.log(response.data);
+      if (!response.ok || response.data.message !== "success") {
         throw new Error(`API error: ${response.statusText}`);
       }
 
@@ -64,7 +64,9 @@ export default function Login() {
         <div className={styles.line}></div>
         <span className={styles.login}>Login</span>
         <span className={styles.already}>Need to register?</span>
-        <Link className={styles.reg} href="/regnext">Register</Link>
+        <Link className={styles.reg} href="/regnext">
+          Register
+        </Link>
         <div>
           {}
           <input
@@ -89,23 +91,10 @@ export default function Login() {
         </div>
 
         <div className={styles.boxcontainer}>
-            <div className={styles.box}>
-            </div>
-            <div className={styles.box}></div>
-        <div className={styles.enter}>
-            {/* <span className={styles.entering}>Name</span>
-            <span className={styles.entering}>Email</span>
-            <span className={styles.entering}>Upload your fingerprint</span> */}
-                <form className={styles.form} onSubmit={handleSubmit}>
-                
-      <div className={styles.formGroup}>
-        <label htmlFor="name">Name:</label>
-        <input type="text" id="name" name="name" value={name} onChange={handleNameChange}  className={styles.box}/>
-      </div>
           <div className={styles.enter}>
             <form className={styles.form} onSubmit={handleSubmit}>
               <div className={styles.formGroup}>
-                <label htmlFor="name">Name</label>
+                <label htmlFor="name" className={styles.enter}>Name</label>
                 <input
                   type="text"
                   id="name"
