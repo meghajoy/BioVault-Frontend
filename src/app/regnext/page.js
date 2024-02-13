@@ -72,7 +72,9 @@ export default function RegNext() {
       <span className={styles.register}>Register</span>
       <div className={styles.linesContainer}>
         <div className={styles.formGroup}>
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name" className={styles.label}>
+            Name
+          </label>
           <input
             type="text"
             id="name"
@@ -81,10 +83,13 @@ export default function RegNext() {
             onChange={handleNameChange}
             className={styles}
           />
+          <i></i>
         </div>
 
         <div className={styles.formGroup}>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email" className={styles.label}>
+            Email
+          </label>
           <input
             type="email"
             id="email"
@@ -93,10 +98,13 @@ export default function RegNext() {
             onChange={handleEmailChange}
             className={styles}
           />
+          <i></i>
         </div>
 
         <div className={styles.formGroup}>
-          <label htmlFor="phoneNumber">Phone No.</label>
+          <label htmlFor="phoneNumber" className={styles.label}>
+            Phone no.
+          </label>
           <input
             type="tel"
             id="phoneNumber"
@@ -105,17 +113,18 @@ export default function RegNext() {
             onChange={handlePhoneNumberChange}
             className={styles}
           />
+          <i></i>
         </div>
 
-        <div className={styles.line}></div>
+        {/* <div className={styles.line}></div>
         <div className={styles.line}> </div>
-        <div className={styles.line}></div>
-        <div className={styles.enter}>
-          <span className={styles.entering}>Name</span>
+        <div className={styles.line}></div> */}
+
+          {/* <span className={styles.entering}>Name</span>
           <span className={styles.entering}>Email</span>
-          <span className={styles.entering}>Phone no.</span>
+          <span className={styles.entering}>Phone no.</span> */}
           <span className={styles.entering}>Add your fingerprints</span>
-        </div>
+
       </div>
       <div className={styles.outcircle1}></div>
       <div className={styles.outcircle2}></div>

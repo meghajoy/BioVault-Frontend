@@ -183,3 +183,58 @@
   z-index: -1;
   cursor: pointer;
 }
+.linesContainer {
+  gap: 30px;
+}
+.formGroup {
+  position: relative;
+  top: 1px;
+  left: -10px;
+  width: 200px;
+}
+.label {
+  font-family: "DM Mono", monospace;
+  font-size: 21px;
+  color: #0c1141;
+  font-weight: 100;
+}
+
+.formGroup input {
+  background: transparent;
+  color: black;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  font-size: 14px;
+  font-family: "DM Mono", monospace;
+}
+.formGroup label {
+  position: absolute;
+  left: -11px;
+  padding: 1px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.formGroup input:valid ~ label,
+.formGroup input:focus ~ label {
+  color: #a5a9cf;
+  transform: translateY(-16px);
+  font-size: 10px;
+}
+.formGroup i{
+  position: absolute;
+  left: -10px;
+  top: 25px;
+  width: 540px;
+  height: 1px;
+  background: rgba(12, 17, 65, 0.46);
+  overflow: hidden;
+}
+
+.entering{
+  font-family: "DM Mono", monospace;
+  font-size: 21px;
+  color: #0c1141;
+  font-weight: 100;
+}

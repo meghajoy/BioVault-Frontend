@@ -82,7 +82,7 @@
   backdrop-filter: blur(9px);
   -webkit-backdrop-filter: blur(9px);
 }
-.enetr {
+.enter {
   display: flex;
   flex-direction: column;
 }
