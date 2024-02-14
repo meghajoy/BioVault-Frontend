@@ -71,60 +71,60 @@ export default function RegNext() {
       />
       <span className={styles.register}>Register</span>
       <div className={styles.linesContainer}>
-        <div className={styles.formGroup}>
-          <label htmlFor="name" className={styles.label}>
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={name}
-            onChange={handleNameChange}
-            className={styles}
-          />
-          <i></i>
-        </div>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <div className={styles.formGroup}>
+            <label htmlFor="name" className={styles.label}>
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={name}
+              onChange={handleNameChange}
+              className={styles}
+            />
+            <i></i>
+          </div>
 
-        <div className={styles.formGroup}>
-          <label htmlFor="email" className={styles.label}>
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={handleEmailChange}
-            className={styles}
-          />
-          <i></i>
-        </div>
+          <div className={styles.formGroup}>
+            <label htmlFor="email" className={styles.label}>
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={email}
+              onChange={handleEmailChange}
+              className={styles}
+            />
+            <i></i>
+          </div>
 
-        <div className={styles.formGroup}>
-          <label htmlFor="phoneNumber" className={styles.label}>
-            Phone no.
-          </label>
-          <input
-            type="tel"
-            id="phoneNumber"
-            name="phoneNumber"
-            value={phoneNumber}
-            onChange={handlePhoneNumberChange}
-            className={styles}
-          />
-          <i></i>
-        </div>
+          <div className={styles.formGroup}>
+            <label htmlFor="phoneNumber" className={styles.label}>
+              Phone no.
+            </label>
+            <input
+              type="tel"
+              id="phoneNumber"
+              name="phoneNumber"
+              value={phoneNumber}
+              onChange={handlePhoneNumberChange}
+              className={styles}
+            />
+            <i></i>
+          </div>
+        </form>
 
         {/* <div className={styles.line}></div>
         <div className={styles.line}> </div>
         <div className={styles.line}></div> */}
 
-          {/* <span className={styles.entering}>Name</span>
+        {/* <span className={styles.entering}>Name</span>
           <span className={styles.entering}>Email</span>
           <span className={styles.entering}>Phone no.</span> */}
-          <span className={styles.entering}>Add your fingerprints</span>
-
       </div>
       <div className={styles.outcircle1}></div>
       <div className={styles.outcircle2}></div>
@@ -132,9 +132,10 @@ export default function RegNext() {
 
       <div className={styles.boxcontainer}>
         <button className={styles.box}></button>
-        <button className={styles.box}></button>
-        <button className={styles.box}></button>
+        {/* <button className={styles.box}></button>
+        <button className={styles.box}></button> */}
       </div>
+      <span className={styles.entering}>Add your fingerprints</span>
 
       <div className={styles.pluscontainer}>
         <div>
@@ -156,7 +157,7 @@ export default function RegNext() {
               alt="Fingerprint"
             />
           </label>
-          <label htmlFor="fileInput" style={{ cursor: "pointer" }}>
+          {/* <label htmlFor="fileInput" style={{ cursor: "pointer" }}>
             <Image
               className={styles.plus}
               src="/plus.png"
@@ -173,7 +174,7 @@ export default function RegNext() {
               height={24}
               alt="Fingerprint"
             />
-          </label>
+          </label> */}
 
           {/* {selectedFile && <p>Selected File: {selectedFile.name}</p>} */}
         </div>

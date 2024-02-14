@@ -192,14 +192,14 @@
   left: -10px;
   width: 200px;
 }
-.label {
+/* .label {
   font-family: "DM Mono", monospace;
   font-size: 21px;
   color: #0c1141;
   font-weight: 100;
-}
+} */
 
-.formGroup input {
+/* .formGroup input {
   background: transparent;
   color: black;
   border: none;
@@ -221,18 +221,52 @@
   color: #a5a9cf;
   transform: translateY(-16px);
   font-size: 10px;
+} */
+
+.formGroup {
+  position: relative;
+  margin-bottom: 45px;
 }
-.formGroup i{
+
+.formGroup input {
+  width: 540px;
+  padding: 10px;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+.formGroup label {
+  position: absolute;
+  top: -20px;
+  left: -12px;
+  transform-origin: 0 0;
+  transition: transform 0.2s, font-size 0.2s;
+  font-family: "DM Mono", monospace;
+  font-size: 21px;
+  color: #0c1141;
+  font-weight: 100;
+}
+
+.formGroup input:valid ~ label,
+.formGroup input:focus ~ label {
+  transform: translateY(-16px);
+  font-size: 10px;
+}
+.formGroup i {
   position: absolute;
   left: -10px;
-  top: 25px;
+  top: 34px;
   width: 540px;
   height: 1px;
   background: rgba(12, 17, 65, 0.46);
   overflow: hidden;
 }
 
-.entering{
+.entering {
+  position: absolute;
+  top: 380px;
+  left: 699px;
   font-family: "DM Mono", monospace;
   font-size: 21px;
   color: #0c1141;
