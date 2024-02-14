@@ -22,7 +22,6 @@ export default function Login() {
     setSelectedFile(file);
   };
 
-  //const handleSubmit = async (e) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -93,7 +92,6 @@ export default function Login() {
           Register
         </Link>
         <div>
-          
           <input
             type="file"
             accept="image/*"
