@@ -23,6 +23,7 @@ export default function Login() {
   };
 
   const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Name", name);
     console.log("Email", email);
@@ -35,9 +36,8 @@ export default function Login() {
       if (!response.ok || response.data.message !== "success") {
         throw new Error(`API error: ${response.statusText}`);
       }
-
-      const data = await response.json();
-      console.log("Registration successful:", data);
+      // const data = await response.json();
+      console.log("Registration successful:", response.data);
     } catch (error) {
       console.error("Error registering:", error);
       // Handle registration errors (e.g., display error message)
