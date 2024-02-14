@@ -6,7 +6,7 @@ import Link from "next/link";
 
 import { Form, Input, message } from "antd";
 export default function Register() {
-  return (
+    return (
     <main>
       <div className={styles.bioVault}>
         B<span className={styles.iitalics}>i</span>oVa

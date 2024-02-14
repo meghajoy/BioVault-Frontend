@@ -22,10 +22,18 @@ export default function RegNext() {
     setSelectedFile(file);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Name", name);
-    console.log("Email", email);
+  const handleSubmit= async(values)=>{
+    console.log(values)
+    try {
+      const response = await api.post("/api/regnex",{ values})
+      console.log(response)
+      if(!response.data.success){
+        console.log("succesfully registered")
+        alert("registration successful")
+      }
+    } catch (error) {
+      console.log("error :"+error)
+    }
   };
   const handlePhoneNumberChange = (e) => {
     setPhoneNumber(e.target.value);
