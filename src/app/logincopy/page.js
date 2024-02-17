@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function Login() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [selectedFile, setSelectedFile] = useState("");
+  const [selectedFile, setSelectedFile] = useState(null);
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -25,26 +25,50 @@ export default function Login() {
   //const handleSubmit = async (e) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!selectedFile) {
+      alert("Please select a fingerprint image.");
+      return; // Prevent submission if no file selected
+    }
+
     console.log("Name", name);
     console.log("Email", email);
+
+    const formData = new FormData(); // Use FormData for multipart data
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("fingerprint", selectedFile); // Append file with key "fingerprint"
+    
     try {
-      const response = await api.post("/api/register", {
-        name,
-        email,
-      });
+      const response = await api.post("/api/register", formData);
+
       console.log(response.data);
       if (!response.data.success) {
         throw new Error(`API error: ${response.statusText}`);
       }
-      alert("successful registration");
-      // const data = await response.json();
+
       console.log("Registration successful:", response.data);
     } catch (error) {
       console.error("Error registering:", error);
-      // Handle registration errors (e.g., display error message)
-      // Replace with your desired error handling logic
-      alert("Registration failed. Please try again.");
+      alert("Registration failed. Please try again."); // Handle errors appropriately
     }
+    // try {
+    //   const response = await api.post("/api/register", {
+    //     name,
+    //     email,
+    //   });
+    //   console.log(response.data);
+    //   if (!response.data.success) {
+    //     throw new Error(`API error: ${response.statusText}`);
+    //   }
+    //   // const data = await response.json();
+    //   console.log("Registration successful:", response.data);
+    // } catch (error) {
+    //   console.error("Error registering:", error);
+    //   // Handle registration errors (e.g., display error message)
+    //   // Replace with your desired error handling logic
+    //   alert("Registration failed. Please try again.");
+    // }
   };
   return (
     <main>
