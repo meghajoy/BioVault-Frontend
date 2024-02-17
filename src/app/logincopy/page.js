@@ -33,9 +33,10 @@ export default function Login() {
         email,
       });
       console.log(response.data);
-      if (!response.ok || response.data.message !== "success") {
+      if (!response.data.success) {
         throw new Error(`API error: ${response.statusText}`);
       }
+      alert("successful registration");
       // const data = await response.json();
       console.log("Registration successful:", response.data);
     } catch (error) {
