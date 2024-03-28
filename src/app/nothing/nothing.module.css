@@ -1,0 +1,40 @@
+.body {
+  color: #f5f5f5;
+}
+.circle {
+  position: absolute;
+  top: -250px;
+  left: 1000px;
+  width: 500px;
+  height: 500px;
+  background-color: #8d98fc;
+  border-radius: 50%;
+  filter: blur(100px);
+}
+.i1 {
+  position: absolute;
+  top: 200px;
+  left: 800px;
+}
+.i2 {
+  position: absolute;
+  top: 300px;
+  left: 980px;
+  z-index: 1;
+}
+.i3 {
+  position: absolute;
+  top: 210px;
+  left: 920px;
+}
+.vect {
+  position: absolute;
+  top: 100px;
+  left: 790px;
+  z-index: -1;
+}
+.texts img {
+  position: absolute;
+  top: 280px;
+  left: 130px;
+}

@@ -166,8 +166,8 @@
 }
 .submit {
   position: absolute;
-  top: 542px;
-  left: 980px;
+  top: 365px;
+  left: 253px;
   font-style: normal;
   font-family: "DM Mono", monospace;
   font-size: 17px;
@@ -178,8 +178,8 @@
 }
 .submit img {
   position: absolute;
-  top: -5px;
-  left: -18px;
+  top: -6px;
+  left: -17px;
   z-index: -1;
   cursor: pointer;
 }

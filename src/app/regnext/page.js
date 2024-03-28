@@ -22,17 +22,21 @@ export default function RegNext() {
     setSelectedFile(file);
   };
 
-  const handleSubmit= async(values)=>{
-    console.log(values)
+  const handleSubmit = async (values) => {
+    e.preventDefault();
+    console.log("Name", name);
+    console.log("Email", email);
+    console.log("Phoneno.", phoneNumber);
+    console.log(values);
     try {
-      const response = await api.post("/api/regnex",{ values})
-      console.log(response)
-      if(!response.data.success){
-        console.log("succesfully registered")
-        alert("registration successful")
+      const response = await api.post("/api/regnex", { values });
+      console.log(response);
+      if (!response.data.success) {
+        console.log("succesfully registered");
+        alert("registration successful");
       }
     } catch (error) {
-      console.log("error :"+error)
+      console.log("error :" + error);
     }
   };
   const handlePhoneNumberChange = (e) => {
@@ -46,6 +50,7 @@ export default function RegNext() {
           width={640}
           height={836}
           alt="Fingerprint"
+          priority
         />
 
         <div className={styles.bioVault}>
@@ -124,6 +129,18 @@ export default function RegNext() {
             />
             <i></i>
           </div>
+          <button type="submit" className={styles.submit}>
+            Submit
+            <div>
+              <Image
+                className={styles.plus}
+                src="/submit.png"
+                width={92}
+                height={34}
+                alt="Fingerprint"
+              />
+            </div>
+          </button>
         </form>
 
         {/* <div className={styles.line}></div>
@@ -187,19 +204,6 @@ export default function RegNext() {
           {/* {selectedFile && <p>Selected File: {selectedFile.name}</p>} */}
         </div>
       </div>
-
-      <button type="submit" className={styles.submit}>
-        Submit
-        <div>
-          <Image
-            className={styles.plus}
-            src="/submit.png"
-            width={92}
-            height={34}
-            alt="Fingerprint"
-          />
-        </div>
-      </button>
     </main>
   );
 }
