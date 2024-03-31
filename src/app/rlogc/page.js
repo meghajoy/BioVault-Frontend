@@ -39,7 +39,7 @@ export default function Login() {
     formData.append("fingerprint", selectedFile); // Append file with key "fingerprint"
     
     try {
-      const response = await api.post("/api/register", formData);
+      const response = await api.post("/api/login", formData);
 
       console.log(response.data);
       if (!response.data.success) {
