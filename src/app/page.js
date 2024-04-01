@@ -1,95 +1,39 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./page.module.css";
+import Link from "next/link";
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+import { Form, Input, message } from "antd";
+export default function Register() {
+    return (
+    <main>
+      <div className={styles.bioVault}>
+        B<span className={styles.iitalics}>i</span>oVa
+        <span className={styles.letteru}>u</span>
+        <span className={styles.litalics}>l</span>
+        <span className={styles.blackText}>t</span>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className={styles.circle}>
+        <Image src="/u1.png" width={407} height={501} alt="Fingerprint" />
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <Image
+        className={styles.finger2}
+        src="/u2.png"
+        width={247}
+        height={380}
+        alt="Fingerprint"
+      />
+      <div className={styles.roundrect}>
+        <span className={styles.reg}>Register your fingerprint</span>
+        <Link className={styles.regcircle} href="/regnext">
+          <Image src="/u3.png" width={35} height={45} alt="Fingerprint" />
+        </Link>
       </div>
+      <Link type="button" className={styles.login} href="/regis">
+        Login
+        <Image src="/u4.png" width={40} height={40} alt="Fingerprint" />
+      </Link>
     </main>
   );
 }
