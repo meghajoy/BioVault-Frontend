@@ -88,7 +88,7 @@ export default function Login() {
         <div className={styles.line}></div>
         <span className={styles.login}>Login</span>
         <span className={styles.already}>Need to register?</span>
-        <Link className={styles.reg} href="/regnext">
+        <Link className={styles.reg} href="/regis">
           Register
         </Link>
         <div>
