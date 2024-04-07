@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./regnext.module.css";
 import { useState } from "react";
 import Link from "next/link";
+import api from "../../../api";
 
 export default function RegNext() {
   const [name, setName] = useState("");
@@ -23,13 +24,12 @@ export default function RegNext() {
   };
 
   const handleSubmit = async (values) => {
-    e.preventDefault();
+    values.preventDefault();
     console.log("Name", name);
     console.log("Email", email);
     console.log("Phoneno.", phoneNumber);
-    console.log(values);
     try {
-      const response = await api.post("/api/regnex", { values });
+      const response = await api.post("/api/register", { name, email, phoneNumber });
       console.log(response);
       if (!response.data.success) {
         console.log("succesfully registered");
