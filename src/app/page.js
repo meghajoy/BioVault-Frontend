@@ -30,7 +30,7 @@ export default function Register() {
           <Image src="/u3.png" width={35} height={45} alt="Fingerprint" />
         </Link>
       </div>
-      <Link type="button" className={styles.login} href="/regis">
+      <Link type="button" className={styles.login} href="/rlogc">
         Login
         <Image src="/u4.png" width={40} height={40} alt="Fingerprint" />
       </Link>

@@ -8,7 +8,7 @@ import api from "../../../api";
 export default function RegNext() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [selectedFile, setSelectedFile] = useState("");
+  const [selectedFile, setSelectedFile] = useState(null);
   const [phoneNumber, setPhoneNumber] = useState("");
 
   const handleNameChange = (e) => {
@@ -18,30 +18,49 @@ export default function RegNext() {
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
+
+  const handlePhoneNumberChange = (e) => {
+    setPhoneNumber(e.target.value);
+  };
+  
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     setSelectedFile(file);
   };
 
-  const handleSubmit = async (values) => {
-    values.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!selectedFile) {
+      alert("Please select a fingerprint image.");
+      return; // Prevent submission if no file selected
+    }
+
     console.log("Name", name);
     console.log("Email", email);
     console.log("Phoneno.", phoneNumber);
+
+    const formData = new FormData(); // Use FormData for multipart data
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("phoneNumber", phoneNumber);
+    formData.append("fingerprint", selectedFile); // Append file with key "fingerprint"
+    
     try {
-      const response = await api.post("/api/register", { name, email, phoneNumber });
-      console.log(response);
+      const response = await api.post("/api/register", formData);
+      
+      console.log(response.data);
       if (!response.data.success) {
-        console.log("succesfully registered");
-        alert("registration successful");
+        throw new Error(`API error: ${response.statusText}`);
       }
+
+      console.log("Registration successful:", response.data);
     } catch (error) {
-      console.log("error :" + error);
+      console.error("Error registering:", error);
+      alert("Registration failed. Please try again."); // Handle errors appropriately
     }
   };
-  const handlePhoneNumberChange = (e) => {
-    setPhoneNumber(e.target.value);
-  };
+  
   return (
     <main>
       <div className={styles.rect}>

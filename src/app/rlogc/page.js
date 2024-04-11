@@ -46,10 +46,10 @@ export default function Login() {
         throw new Error(`API error: ${response.statusText}`);
       }
 
-      console.log("Registration successful:", response.data);
+      console.log("Login successful:", response.data);
     } catch (error) {
-      console.error("Error registering:", error);
-      alert("Registration failed. Please try again."); // Handle errors appropriately
+      console.error("Error logging in:", error);
+      alert("Login failed. Please try again."); // Handle errors appropriately
     }
     // try {
     //   const response = await api.post("/api/register", {
@@ -88,7 +88,7 @@ export default function Login() {
         <div className={styles.line}></div>
         <span className={styles.login}>Login</span>
         <span className={styles.already}>Need to register?</span>
-        <Link className={styles.reg} href="/regis">
+        <Link className={styles.reg} href="/regnext">
           Register
         </Link>
         <div>
