@@ -55,6 +55,7 @@ export default function RegNext() {
       }
 
       console.log("Registration successful:", response.data);
+      alert("Registration successful");
     } catch (error) {
       console.error("Error registering:", error);
       alert("Registration failed. Please try again."); // Handle errors appropriately

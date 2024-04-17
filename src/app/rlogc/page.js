@@ -47,6 +47,7 @@ export default function Login() {
       }
 
       console.log("Login successful:", response.data);
+      alert("Login successful");
     } catch (error) {
       console.error("Error logging in:", error);
       alert("Login failed. Please try again."); // Handle errors appropriately
