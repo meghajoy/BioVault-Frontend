@@ -58,7 +58,7 @@ export default function RegNext() {
       alert("Registration successful");
     } catch (error) {
       console.error("Error registering:", error);
-      alert("Registration failed. User already exists."); // Handle errors appropriately
+      alert("Registration failed."); // Handle errors appropriately
     }
   };
   
