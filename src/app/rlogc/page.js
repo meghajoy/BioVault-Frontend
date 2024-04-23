@@ -30,7 +30,7 @@ export default function Login() {
       return; // Prevent submission if no file selected
     }
 
-    console.log("Name", name);
+    console.log("Name", "jj");
     console.log("Email", email);
 
     const formData = new FormData(); // Use FormData for multipart data
@@ -86,7 +86,6 @@ export default function Login() {
         <span className={styles.blackText}>t</span>
       </div>
       <div className={styles.rect}>
-        <div className={styles.line}></div>
         <span className={styles.login}>Login</span>
         <span className={styles.already}>Need to register?</span>
         <Link className={styles.reg} href="/regnext">
@@ -117,7 +116,7 @@ export default function Login() {
         <div className={styles.boxcontainer}>
           <div className={styles.enter}>
             <form className={styles.form} onSubmit={handleSubmit}>
-              <div className={styles.formGroup}>
+              {/* <div className={styles.formGroup}>
                 <label htmlFor="name" className={styles.enter}>Name</label>
                 <input
                   type="text"
@@ -127,7 +126,7 @@ export default function Login() {
                   onChange={handleNameChange}
                   className={styles.box}
                 />
-              </div>
+              </div> */}
 
               <div className={styles.formGroup}>
                 <label htmlFor="email">Email</label>
