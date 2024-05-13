@@ -192,8 +192,27 @@ export default function RegNext() {
             style={{ display: "none" }}
             onChange={handleFileChange}
           />
-
           <label htmlFor="fileInput" style={{ cursor: "pointer" }}>
+            {selectedFile ? (
+              <Image
+                className={styles.tick}
+                src="/tick.png"
+                width={30}
+                height={30}
+                alt="Uploaded"
+              />
+            ) : (
+              <Image
+                className={styles.plus}
+                src="/plus.png"
+                width={24}
+                height={24}
+                alt="Fingerprint"
+              />
+            )}
+          </label>
+
+          {/* <label htmlFor="fileInput" style={{ cursor: "pointer" }}>
             <Image
               className={styles.plus}
               src="/plus.png"
@@ -201,7 +220,10 @@ export default function RegNext() {
               height={24}
               alt="Fingerprint"
             />
-          </label>
+          </label> */}
+
+
+
           {/* <label htmlFor="fileInput" style={{ cursor: "pointer" }}>
             <Image
               className={styles.plus}

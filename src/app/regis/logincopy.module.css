@@ -106,7 +106,7 @@
 }
 .boxcontainer {
   position: absolute;
-  top: 115px;
+  top: 120px;
   left: 60px;
   display: flex;
   flex-direction: column;

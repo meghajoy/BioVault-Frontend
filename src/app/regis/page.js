@@ -78,18 +78,12 @@ export default function Login() {
         height={54}
         alt="Fingerprint"
       />
-      <div className={styles.bioVault}>
-        B<span className={styles.iitalics}>i</span>oVa
-        <span className={styles.letteru}>u</span>
-        <span className={styles.litalics}>l</span>
-        <span className={styles.blackText}>t</span>
-      </div>
+
       <div className={styles.rect}>
         <div className={styles.line}></div>
         <span className={styles.login}>Register</span>
-        <span className={styles.already}>Want to login?</span>
-        <Link className={styles.reg} href="/rlogc">
-          Login
+        <Link className={styles.reg} href="/regnext">
+          Register
         </Link>
         <div>
           <input
